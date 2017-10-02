@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exception flow</title>
+    <style>
+        .main-button {
+            font-size: large;
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 25px auto;
+        }
+    </style>
+</head>
+<body>
+    <button class="main-button">Click me!</button>
+
+    <ul></ul>
+
+    <script>
+        function appendMessage( message ) {
+            var li = document.createElement( 'li' );
+            li.textContent = message;
+            document.querySelector( 'ul' ).appendChild( li );
+            li = null;
+        }
+
+        function buttonHandler() {
+            appendMessage( 'buttonHandler' );
+            throw new Error( 'Custom Error' );
+            alert( 'Don\'t show' );
+        }
+
+        function intervalHandler() {
+            appendMessage( 'intervalHandler' );
+        }
+
+        document
+            .querySelector( '.main-button' )
+            .addEventListener( 'click', buttonHandler )
+        ;
+
+        setInterval( intervalHandler, 1000 );
+    </script>
+</body>
+</html>
