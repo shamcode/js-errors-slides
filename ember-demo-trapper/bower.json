@@ -1,0 +1,6 @@
+{
+  "name": "ember-demo-trapper",
+  "dependencies": {
+    "raven-js": "~3.3"
+  }
+}

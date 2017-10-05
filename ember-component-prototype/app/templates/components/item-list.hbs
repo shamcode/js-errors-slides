@@ -1,0 +1,9 @@
+<ul>
+  {{#each items as |item|}}
+    <li>{{item}}</li>
+  {{/each}}
+</ul>
+
+{{input value=itemText}}
+
+<button {{action 'addItem' itemText}}>Add</button>
