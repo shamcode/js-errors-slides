@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Without decomposition</title>
+</head>
+<body>
+    <script>
+        window.onerror = function( msg, url, line, column, err ) {
+            console.log( err.stack );
+        };
+
+        setTimeout( function() {
+            throw new Error( 'Custom Error' );
+        }, 1000 );
+    </script>
+</body>
+</html>
