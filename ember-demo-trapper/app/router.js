@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('simple-exception');
   this.route('demo-trapper');
+  this.route('global-callback-demo-trapper');
 });
 
 export default Router;
